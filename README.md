@@ -2,8 +2,7 @@
 
 ## ⚠ Lưu ý quan trọng
 
-🔴 **Dự án này có chứa code hint.** Vui lòng tìm đến **bài ghim** trong kênh <a href="https://t.me/+8o9ebAT9ZSFlZGNl" target="_blank" rel="noopener noreferrer">Telegram Channel</a>
- để kiểm tra trước khi sử dụng.
+🔴 **Dự án này có chứa code hint.** Vui lòng tìm đến **bài ghim** trong kênh [Telegram Channel](https://t.me/+8o9ebAT9ZSFlZGNl){:target="_blank"} để kiểm tra trước khi sử dụng.
 
 ---
 
@@ -40,7 +39,7 @@
 
 <p align="center">
     <a href="">
-        <img src="https://cdn.coin68.com/images/20241114043237-adcfb71b-6be1-4914-9941-b829fe5a5d07-100.jpg" alt="Xem video demo">
+        <img src="" alt="Xem video demo">
     </a>
 </p>
 
