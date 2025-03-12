@@ -1,4 +1,5 @@
 requests==2.32.3
 screeninfo==0.8.1
-selenium==4.28.1
+selenium==4.29.0
 selenium-wire=5.1.0
+blinker==1.7.0

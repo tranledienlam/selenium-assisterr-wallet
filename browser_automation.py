@@ -986,7 +986,10 @@ class BrowserManager:                                                           
         
         use_proxy = Utility.is_proxy_working(proxy_info)
         if use_proxy:
-            from seleniumwire import webdriver
+            try:
+                from seleniumwire import webdriver
+            except Exception as e:  
+                self._log(message=f'{e}')
             seleniumwire_options = {
                 'proxy': {
                     'http': f'http://{proxy_info}',

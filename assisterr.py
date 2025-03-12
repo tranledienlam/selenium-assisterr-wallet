@@ -23,11 +23,24 @@ class Assisterr:
         ]
         
         return self.node.execute_chain(actions=actions, message_error='Unlock Phantom thất bại')
-        
+    def confirm_connect(self):
+        if self.node.find_and_click(By.XPATH, '//button[text()="Select Wallet"]'):
+            self.node.find_and_click(By.XPATH, '//button[text()="Phantom"]')
+        self.node.switch_tab(self.wallet_url)
+        if self.node.find_and_click(By.XPATH, '//button[text()="Connect"]'):
+            self.node.switch_tab(self.wallet_url)
+        self.node.find_and_click(By.XPATH, '//button[text()="Confirm"]')
+        self.node.switch_tab('https://build.assisterr.ai')
+        self.node.go_to('https://build.assisterr.ai/dashboard')
+
     def _run_logic(self):
         self.unlock_wallet()
-        
         self.node.go_to('https://build.assisterr.ai/dashboard')
+        text_h1 = self.node.get_text(By.CSS_SELECTOR, 'h1')
+
+        if text_h1 == 'Agent, Join Testnet!':
+            self.confirm_connect()
+
         self.node.find_and_click(By.XPATH, '//button[text()="Grab Daily Tokens"]')
         text = self.node.get_text(By.XPATH, '//div[text()="Come back in "]//div')
         if not text:
