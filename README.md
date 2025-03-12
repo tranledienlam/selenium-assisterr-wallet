@@ -38,8 +38,8 @@
 ## 🎬 Video demo (cập nhật sau)
 
 <p align="center">
-    <a href="">
-        <img src="" alt="Xem video demo">
+    <a href="https://youtu.be/w3kWqiiMJaQ">
+        <img src="https://i.ytimg.com/vi/w3kWqiiMJaQ/hqdefault.jpg?sqp=-oaymwFBCNACELwBSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGEYgQyhlMA8=&rs=AOn4CLCZoUoJv77CBo4RH2a9NWJoXUihUQ" alt="Xem video demo">
     </a>
 </p>
 
