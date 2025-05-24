@@ -24,12 +24,14 @@ class Assisterr:
         
         return self.node.execute_chain(actions=actions, message_error='Unlock Phantom thất bại')
     def confirm_connect(self):
-        if self.node.find_and_click(By.XPATH, '//button[text()="Select Wallet"]'):
+        timeout = 15
+        if self.node.find_and_click(By.XPATH, '//button[text()="Select Wallet"]', None, None, timeout):
             self.node.find_and_click(By.XPATH, '//button[text()="Phantom"]')
         self.node.switch_tab(self.wallet_url)
-        if self.node.find_and_click(By.XPATH, '//button[text()="Connect"]'):
-            self.node.switch_tab(self.wallet_url)
-        self.node.find_and_click(By.XPATH, '//button[text()="Confirm"]')
+        if not self.node.find_and_click(By.XPATH, '//button[text()="Confirm"]'):
+            if self.node.find_and_click(By.XPATH, '//button[text()="Connect"]', None, None, timeout):
+                self.node.switch_tab(self.wallet_url)
+                self.node.find_and_click(By.XPATH, '//button[text()="Confirm"]')
         self.node.switch_tab('https://build.assisterr.ai')
         self.node.go_to('https://build.assisterr.ai/dashboard')
 
@@ -42,7 +44,7 @@ class Assisterr:
             self.confirm_connect()
 
         self.node.find_and_click(By.XPATH, '//button[text()="Grab Daily Tokens"]')
-        text = self.node.get_text(By.XPATH, '//div[text()="Come back in "]//div')
+        text = self.node.get_text(By.XPATH, '//div[text()="Come back in "]//div', None, 10)
         if not text:
             self.node.snapshot('Check-in thất bại')
         else:
